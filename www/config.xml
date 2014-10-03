@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="edu.bu.smgtools.mainapp" version="1.0.0">
+	<name>SMGTools</name>
+	<description>
+		The official SMGTools app.
+	</description>
+	<icon src="www/icon.png" />
+	<preference name="Orientation" value="portrait" />
+	<preference name="BackgroundColor" value="0xff4b4d4e" />
+	<preference name="KeepRunning" value="false" />
+	<preference name="StatusBarOverlaysWebView" value="false" />
+	
+	<plugin name="com.phonegap.plugin.statusbar" />
+	<feature name="StatusBar">
+		<param name="ios-package" value="CDVStatusBar" onload="true" />
+	</feature>
+<!-- 	<feature name="Calendar">
+	    <param name="ios-package" value="Calendar" />
+	</feature> -->
+<!-- 	<feature name="Calendar">
+		<param name="android-package" value="nl.xservices.plugins.Calendar" />
+	</feature> -->
+	<access origin="*" />
+</widget>

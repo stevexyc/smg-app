@@ -1,0 +1,475 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getCal (?)"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"my",
+				"mysqli()	ctor"
+			]
+		]
+	},
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 185.0,
+		"selected_items":
+		[
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ta",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"php",
+				"Set Syntax: PHP 5"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"trailin",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"",
+				"File: Close All"
+			]
+		],
+		"width": 386.0
+	},
+	"console":
+	{
+		"height": 333.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/assets/www/cordova_plugins.js",
+		"/C/Users/jhansel/Desktop/smg-app/plugins/nl.x-services.plugins.calendar/plugin.xml",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/assets/www/plugins/nl.x-services.plugins.calendar/www/Calendar.js",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/assets/www/cordova.js",
+		"/C/Users/jhansel/Desktop/smg-app-new/smg-app/www/css/index.css",
+		"/C/Users/jhansel/Desktop/smg-app/www/css/index.css",
+		"/C/Users/jhansel/Desktop/smg-app/www/index.html",
+		"/C/Users/jhansel/Desktop/smg-app-new/smg-app/plugins/android.json",
+		"/C/Users/jhansel/Desktop/smg-app/www/js/index.js",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/ant-build/AndroidManifest.cordova.xml",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/AndroidManifest.xml",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/build.xml",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/custom_rules.xml",
+		"/C/Users/jhansel/Desktop/smg-app/www/topcoat-0.8.0/css/topcoat-mobile-dark.css",
+		"/C/Users/jhansel/Desktop/smg-app/www/config.xml",
+		"/C/Users/jhansel/Desktop/smg-app/www/spec/index.js",
+		"/C/Users/jhansel/Desktop/smg-app/www/fullcalendar-2.0.2/fullcalendar.js",
+		"/C/Users/jhansel/Desktop/smg-app/www/ui-calendar-master/src/calendar.js",
+		"/C/Users/jhansel/Desktop/smg-app/plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
+		"/C/Users/jhansel/Desktop/smg-app/.cordova/config.json",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/res/xml/config.xml",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/src/edu/bu/smgtools/mainapp/HelloWorld.java",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/src/comX/phonegap/helloworld/HelloWorld.java",
+		"/C/Users/jhansel/Desktop/smg-app/platforms/android/assets/_where-is-www.txt",
+		"/C/Users/jhansel/Desktop/smg-app/plugins/android.json",
+		"/C/Users/jhansel/Desktop/smg-app/hooks/README.md",
+		"/C/Users/jhansel/Desktop/smg-app/www/fullcalendar-2.0.2/lib/moment.min.js",
+		"/C/Users/jhansel/Desktop/smg-app/www/js/moment.js",
+		"/C/Users/jhansel/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/jhansel/AppData/Roaming/npm/node_modules/tern/bin/tern",
+		"/C/Users/jhansel/AppData/Roaming/Sublime Text 3/Packages/User/TernJS.sublime-settings",
+		"/C/Users/jhansel/AppData/Roaming/Sublime Text 3/Packages/TernJS/TernJS.sublime-settings",
+		"/C/Users/jhansel/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/jhansel/Downloads/minimum/app/lib/onsen/css/topcoat-mobile-onsen-blue.css",
+		"/C/Users/jhansel/Desktop/smg-app/plugins/org.apache.cordova.inappbrowser/doc/index.md",
+		"/C/Users/jhansel/Desktop/smg-app/www/fullcalendar-2.0.2/fullcalendar.css",
+		"/C/Users/jhansel/Desktop/smg-app/www/fullcalendar-2.0.2/demos/selectable.html",
+		"/C/Users/jhansel/Desktop/smg-app/www/Font-Awesome-master/css/font-awesome.css",
+		"/C/Users/jhansel/AppData/Local/Temp/ab8935b1/index.php",
+		"/C/Users/jhansel/AppData/Local/Temp/ab8935b1/index-ugrad.php",
+		"/C/Users/jhansel/Downloads/topcoat-0.8.0/topcoat-0.8.0/README.md",
+		"/C/Users/jhansel/.cordova/lib/www/com.phonegap.helloworld/3.5.0/www/config.xml",
+		"/C/Users/jhansel/.cordova/lib/www/com.phonegap.helloworld/3.5.0/www/topcoat/css/topcoat-mobile-dark.min.css",
+		"/C/Users/jhansel/.cordova/lib/www/com.phonegap.helloworld/3.5.0/www/index.html",
+		"/C/Users/jhansel/.cordova/lib/www/com.phonegap.helloworld/3.5.0/www/topcoat/css/topcoat-mobile-dark.css",
+		"/C/Users/jhansel/.cordova/lib/www/com.phonegap.helloworld/3.5.0/www/css/index.css",
+		"/C/Users/jhansel/Desktop/smg-app/www/spec.html",
+		"/C/Users/jhansel/.cordova/lib/android/cordova/3.5.0/bin/lib/check_reqs.js",
+		"/C/Users/jhansel/AppData/Local/Temp/44821c1b/database.php",
+		"/C/Users/jhansel/AppData/Local/Temp/9aca8da2/feedback.php",
+		"/C/Users/jhansel/AppData/Local/Temp/9aca8da2/help.html",
+		"/C/Users/jhansel/AppData/Local/Temp/9aca8da2/video.html",
+		"/C/Users/jhansel/AppData/Local/Temp/44821c1b/user.php",
+		"/C/Users/jhansel/Desktop/dbkiss.php",
+		"/C/Users/jhansel/AppData/Local/Temp/44821c1b/pre.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3ca3f694/login.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3ca3f694/tim20000505.zip",
+		"/C/Users/jhansel/AppData/Local/Temp/9aca8da2/index.html",
+		"/C/Users/jhansel/AppData/Local/Temp/49084762/index.php1",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type (1).sql",
+		"/C/Users/jhansel/AppData/Local/Temp/99a92845/.htaccess",
+		"/C/Users/jhansel/AppData/Local/Temp/1a069533/database.php",
+		"/C/Users/jhansel/AppData/Local/Temp/1a069533/index.php",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type_2014_Jun_25_13_01_03.csv",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type_2014_Jun_25_12_58_15.csv",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type_2014_Jun_25_12_57_08.csv",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type_2014_Jun_25_12_51_57.csv",
+		"/C/Users/jhansel/Downloads/index.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3ca3f694/index.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3ca3f694/confirm.php",
+		"/C/Users/jhansel/Downloads/dbkiss_1.16/dbkiss.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3ca3f694/changepass.php",
+		"/C/Users/jhansel/AppData/Local/Temp/99a92845/index.html",
+		"/C/Users/jhansel/AppData/Local/Temp/99a92845/zzz_4931f03248afde6ff264c72dc717e4e1.dat",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type_2014_Jun_25_13_28_34.csv",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type (2).sql",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type_2014_Jun_25_13_01_36.csv",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type_2014_Jun_25_13_00_19.csv",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type_2014_Jun_25_12_59_49.csv",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type_2014_Jun_25_12_48_54.csv",
+		"/C/Users/jhansel/Downloads/mmpd_clean_business_type.sql",
+		"/C/Users/jhansel/AppData/Local/Temp/bdd29626/index.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3ca3f694/registerToMMPD.php",
+		"/C/Users/jhansel/AppData/Local/Temp/fd1585d6/httpd.conf",
+		"/C/Users/jhansel/AppData/Local/Temp/a03a9eac/php.ini",
+		"/C/Users/jhansel/AppData/Local/Temp/3ca3f694/#login.php#",
+		"/C/Users/jhansel/AppData/Local/Temp/e8f026a/mentors_submit_application.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3cf390e/applications.php",
+		"/C/Users/jhansel/AppData/Local/Temp/d39458ee/globals.php",
+		"/C/Users/jhansel/AppData/Local/Temp/f636448d/process_mentor_registrations.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3cf390e/members.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3cf390e/mentors.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3cf390e/connection.php",
+		"/C/Users/jhansel/AppData/Local/Temp/74cb0c6c/refer.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3cd82ebb/refer.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3cd82ebb/change_login.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3cf390e/autoemails.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3cf390e/emails.php",
+		"/C/Users/jhansel/AppData/Local/Temp/f636448d/process_applications.php",
+		"/C/Users/jhansel/AppData/Local/Temp/d39458ee/test.patch",
+		"/C/Users/jhansel/AppData/Local/Temp/7894fa57/view_autoemail.php",
+		"/C/Users/jhansel/AppData/Local/Temp/b8f0665/view_profile.php",
+		"/C/Users/jhansel/AppData/Local/Temp/f1df47ca/mentors.php",
+		"/C/Users/jhansel/AppData/Local/Temp/f1df47ca/mentees.php",
+		"/C/Users/jhansel/AppData/Local/Temp/d39458ee/login_mini.php",
+		"/C/Users/jhansel/AppData/Local/Temp/c22ed7d1/index.php",
+		"/C/Users/jhansel/AppData/Local/Temp/b1e60252/view_flags.php",
+		"/C/Users/jhansel/AppData/Local/Temp/b1e60252/view_history.php",
+		"/C/Users/jhansel/AppData/Local/Temp/f0ca9e70/mysql.php",
+		"/C/Users/jhansel/AppData/Local/Temp/3cf390e/searches.php",
+		"/C/Users/jhansel/AppData/Local/Temp/9eb2b207/catalina.out",
+		"/C/Users/jhansel/AppData/Local/Temp/9eb2b207/cas.log",
+		"/C/Users/jhansel/Desktop/local-cas/src/main/webapp/WEB-INF/ldap.properties",
+		"/C/Users/jhansel/Desktop/local-cas/src/main/webapp/ldap.properties",
+		"/C/Users/jhansel/Desktop/local-cas/src/main/webapp/WEB-INF/deployerConfigContext.xml",
+		"/C/Users/jhansel/Desktop/local-cas/src/main/webapp/WEB-INF/web-CHK.xml",
+		"/C/Users/jhansel/Desktop/local-cas/target/war/work/org.jasig.cas/cas-server-webapp/WEB-INF/web.xml",
+		"/C/Users/jhansel/Desktop/local-cas/target/war/work/org.jasig.cas/cas-server-webapp/WEB-INF/classes/log4j.xml",
+		"/C/Users/jhansel/Desktop/local-cas/src/main/webapp/WEB-INF/classes/log4j-CHK.xml",
+		"/C/Users/jhansel/Desktop/local-cas/target/war/work/org.jasig.cas/cas-server-webapp/WEB-INF/login-webflow.xml",
+		"/C/Users/jhansel/Desktop/local-cas/src/main/webapp/WEB-INF/login-webflow-CHK.xml",
+		"/C/Users/jhansel/Desktop/local-cas/target/local-cas-1.0-SNAPSHOT/WEB-INF/login-webflow.xml",
+		"/C/Users/jhansel/Desktop/local-cas/target/war/work/org.jasig.cas/cas-server-webapp/WEB-INF/cas.properties",
+		"/C/Users/jhansel/Desktop/local-cas/src/main/webapp/WEB-INF/cas.properties",
+		"/C/Users/jhansel/Desktop/local-cas/pom.xml",
+		"/C/Users/jhansel/Desktop/local-cas/src/main/webapp/WEB-INF/classes/log4j.xml",
+		"/C/Users/jhansel/Desktop/local-cas/target/war/work/org.jasig.cas/cas-server-webapp/WEB-INF/deployerConfigContext.xml",
+		"/C/Users/jhansel/Desktop/local-cas/target/local-cas-1.0-SNAPSHOT/WEB-INF/deployerConfigContext.xml"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Users\\jhansel\\Desktop\\bu"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"calendar",
+			"exports.",
+			"\\",
+			"fc-",
+			"fc-border-separate ",
+			"fc-",
+			" = ",
+			".view",
+			"<i",
+			"didSelect",
+			"getweeks",
+			"date:",
+			"<weblink",
+			"weblink",
+			".toLowerCase()",
+			"overflow",
+			"fc-state-default fc-corner-left fc-corner-right",
+			"flex",
+			"flex-",
+			"overflow:auto",
+			"flex-scroll",
+			"flex-expand",
+			"topcoat-icon",
+			"specificevent",
+			"chevlink",
+			"\n.",
+			"chevlink",
+			".listlink",
+			"chevlink",
+			"topcoat-icon",
+			".fc",
+			".fc ",
+			"h2",
+			".fc ",
+			"fc-content",
+			".fc-view",
+			".view-shortWeek",
+			".fc ",
+			"switchPage",
+			".whitelink",
+			"pplPage",
+			".pplPage",
+			".specificeve",
+			"p {",
+			".whitelink",
+			"news",
+			"newsState",
+			"shortWeek",
+			"changeview",
+			".fc-view-shortWeek ",
+			" .fc-content",
+			"shortWeek",
+			"innerHtml",
+			"currentview.render",
+			"viewrender",
+			"vw",
+			"media",
+			"vw",
+			"currentPage",
+			"name",
+			"smgtools",
+			"startOf('week",
+			"getNow()",
+			"defaultdate",
+			".fullcalendar",
+			"date",
+			"nextDay",
+			"intervalsta",
+			"basicview",
+			"intervalStart =",
+			"intervalStart",
+			"intervalStart.",
+			"basicview",
+			"basicweek",
+			"intervalStart",
+			"intervalStart =",
+			"intervalStart",
+			"renderbasic",
+			"intervalstart",
+			"defaultdate",
+			".stripTime()",
+			"fcmoment",
+			".add(",
+			"fcmoment",
+			"moment",
+			"events",
+			"getcal",
+			"$http",
+			"http.",
+			"events-box",
+			".events",
+			".ui",
+			"calendar",
+			"type=\"text/javascript\" ",
+			"Date",
+			"date",
+			"Date",
+			"date",
+			"Date",
+			"date",
+			"eventsbyid",
+			"\\",
+			"onday",
+			"loadmore",
+			"ifAjax",
+			".start",
+			"eventsou",
+			"alert(",
+			"\"android\"",
+			":platform=",
+			"inapp",
+			"listlink",
+			"g.currentPage=='Events' && ",
+			".calendar",
+			"tab-bar",
+			"navigation",
+			"events",
+			"specificDate",
+			".view-",
+			"moment(",
+			"span",
+			".eventdate",
+			"ng-if",
+			"$scope.nextDay",
+			".events",
+			"events",
+			".events",
+			"key"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"|",
+			"\\1"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 220.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

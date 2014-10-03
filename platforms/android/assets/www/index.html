@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html ng-app="SMGApp">
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- See https://issues.apache.org/jira/browse/CB-4323 -->
+		<meta name="viewport"
+		content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+		<link rel="stylesheet" href="topcoat-0.8.0/css/topcoat-mobile-dark.css">
+		<link rel="stylesheet" href="Font-Awesome-master/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/index.css">
+		<title>SMG App</title>
+	</head>
+	<body ng-controller="mainCtrl" class="flex-col" ng-cloak>
+		<!--
+		Status bar coloring for iOS 7
+		-->
+		<div id="ios7statusbar"></div>
+		<!--
+		Top navigation bar
+		-->
+		<div class="topcoat-navigation-bar" ng-show="g.currentPage != 'Events' || g.specificEvent != null">
+			<!--
+			When viewing an individual event or person, show a "close" button
+			-->
+			<button
+				class="topcoat-icon-button btn-topright"
+				ng-click="g.specificEvent = null; g.specificPerson = null;"
+				ng-if="g.specificEvent != null || g.specificPerson != null">
+				<i class="fa fa-times topcoat-icon"></i>
+			</button>
+			<!--
+			Main header at top of screen
+			-->
+			<div class="topcoat-navigation-bar__item center full">
+				<h1 class="topcoat-navigation-bar__title">
+					{{g.specificEvent ? 'Event Info' : (g.specificPerson ? 'Person Info' : g.currentPage)}}
+				</h1>
+			</div>
+		</div>
+		<!--
+		Events page
+		-->
+		<div class="flex-expand flex-col clist" ng-if="g.currentPage=='Events'" ng-show="g.specificEvent == null" ng-controller="eventsPage">
+			<!--
+			Separate top navigation bar
+			-->
+			<div class="topcoat-navigation-bar">
+				<!-- 
+				Toggle month/day view
+				-->
+				<button
+					class="topcoat-button btn-topright"
+					ng-click="changeView((view == 'month') ? 'shortWeek' : 'month')">
+					{{view == 'month' ? 'Day' : 'Month'}}
+				</button>
+				<!--
+				Main header at top of screen
+				-->
+				<div class="topcoat-navigation-bar__item center full">
+					<h1 class="topcoat-navigation-bar__title">
+						Events
+					</h1>
+				</div>
+			</div>
+
+			<!--
+			Calendar in "day" view
+			-->
+			<table class="cal-view-shortWeek cal-content" ng-show="view == 'shortWeek'">
+				<tr>
+					<td ng-repeat="day in weekDates track by $index" ng-class="{current:day.isSame(nextDay)}" ng-click="moveCal(day)">
+						<span class="dayName">{{day.format('ddd')}}</span>
+						{{day.format(' M/D')}}
+					</td>
+				</tr>
+			</table>
+		
+			<div class="flex-scroll"> 
+				<!--
+				Calendar in "month" view: the month calendar, but not the day-view calendar, goes inside the <div class="flex-scroll">
+				so that it scrolls with the content below it
+				-->
+				<div ng-show="view == 'month'">
+					<table class="cal-header">
+						<tr>
+							<td class="cal-header-left">
+									<i class="fa fa-chevron-left" ng-click="moveCal(nextDay.clone().subtract('months',1).endOf('month'))"></i>
+							</td>
+							<td class="cal-header-center">
+								<h2>{{nextDay.format('MMM YYYY')}}</h2>
+							</td>
+							<td class="cal-header-right">
+								<i class="fa fa-chevron-right" 	ng-click="moveCal(nextDay.clone().add('months',1).startOf('month'))"></i>
+							</td>
+						</tr>
+					</table>
+					<table class="cal-view-month cal-content fc">
+						<tr ng-repeat="row in monthDates track by $index">
+							<td ng-repeat="day in row track by $index"
+							ng-class="{current:day.isSame(nextDay), 'cal-other-month':nextDay.month()!=day.month()}"
+							ng-click="moveCal(day)">{{day.format('D')}}</td>
+						</tr>
+					</table>
+				</div>
+				<!--
+				List of events below the calendar
+				-->
+				<if-ajax state="{{calState}}" on-load="getCal(false)">
+					<div ng-repeat="(i, dayEvents) in events">
+						<h3 class="topcoat-list__header">
+							{{i | date:'EEE M/d'}}
+							<span ng-if="dayEvents.length == 0" class="no-events-span">No Events</span>
+						</h3>
+						<div class="topcoat-list" ng-show="dayEvents.length > 0">
+							<ol class="topcoat-list__container">
+								<li class="topcoat-list__item chevlink" ng-repeat="event in dayEvents" ng-click="g.specificEvent = event">
+									<span class="title">
+										{{event.title}}
+										<small>{{event.time}} &middot; {{event.location}}</small>
+									</span>
+									<i class="fa fa-chevron-right"></i>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</if-ajax>
+			</div>
+		</div>
+		<!--
+		Page for viewing a particular event in detail
+		-->
+		<div class="flex-expand clist infopage" ng-show="g.specificEvent != null">
+			<h2>{{g.specificEvent.title}}</h2>
+			<p><strong>Time:</strong> {{g.specificEvent.date}}</p>
+			<p><strong>Place:</strong> {{g.specificEvent.location}}</p>
+			<p ng-if="g.specificEvent.contactname">
+				<strong>Contact:</strong>
+				<weblink href="mailto:{{g.specificEvent.contactemail}}">{{g.specificEvent.contactname}}</weblink>
+			</p>
+			<p>{{g.specificEvent.message}}</p>
+			<weblink ng-if="g.specificEvent.weblink" href="{{g.specificEvent.weblink}}">More Info</weblink>
+		</div>
+		<!--
+		Hours page
+		-->
+		<div class="flex-scroll hours infopage" ng-if="g.currentPage=='Hours'" ng-controller="hoursPage">
+			<if-ajax state="{{hoursState}}" on-load="getHours()">
+				<span ng-if="hours.Notice">
+					<!--
+					For large, global "notices"
+					-->
+					<h2 ng-if="hours.Notice.subhead">{{hours.Notice.subhead}}</h2>
+					<p ng-if="hours.Notice.status">{{hours.Notice.status}}</p>
+				</span>
+				<div ng-repeat="(name, hourData) in hours" ng-if="name != 'Notice'">
+					<h3>{{name}}</h3>
+					<table ng-if="!hourData.status">
+						<tr ng-repeat="key in hourData.order" ng-if="hourData[key] && key != 'order'">
+							<td>{{key}}: </td>
+							<td>{{hourData[key]}}</td>
+						</tr>
+					</table>
+					<p ng-if="hourData.status">
+						<!--
+						For notices about individual locations
+						-->
+						{{hourData.status}}
+					</p>
+				</div>
+			</if-ajax>
+		</div>
+		<!--
+		News Page
+		-->
+		<div class="flex-expand topcoat-list" ng-if="g.currentPage=='News'" ng-controller="newsPage">
+			<if-ajax state="{{newsState}}" on-load="getNews()">
+				<ol class="topcoat-list__container" >
+					<li ng-repeat="article in news.channel.item" class="chevlink topcoat-list__item" ng-click="browseTo(article.link)">
+						<span class="title">{{article.title}}</span>
+						<i class="fa fa-chevron-right"></i>
+					</li>
+				</ol>
+			</if-ajax>
+		</div>
+		<!--
+		People page
+		-->
+		<div class="flex-expand topcoat-list pplPage flex-col" ng-if="g.currentPage=='People'" ng-show="g.specificPerson == null" ng-controller="pplPage">
+			<input
+				type="search" placeholder="search" class="topcoat-search-input peopleSearch"
+				ng-model="peopleSearch"
+				autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			<if-ajax state="{{pplState}}" on-load="getPeople()" class="flex-scroll">
+				<h2 ng-show="people.length == 0 && peopleSearch != ''" class="noResults">No Results</h2>
+				<ol class="topcoat-list__container" ng-show="people.length > 0">
+					<li ng-repeat="person in people | orderBy: orderSearch : true" class="chevlink topcoat-list__item" ng-click="g.specificPerson = person">
+						<span class="title">{{person.fullname}}</span>
+						<i class="fa fa-chevron-right"></i>
+					</li>
+				</ol>
+			</if-ajax>
+		</div>
+		<!--
+		Page for viewing the details of a particular person
+		-->
+		<div class="flex-expand topcoat-list infopage" ng-if="g.specificPerson != null">
+			<h2>{{g.specificPerson.fullname}}</h2>
+			<p><strong>Title:</strong> {{g.specificPerson.title}}</p>
+			<p><strong>Office:</strong> {{g.specificPerson.buroom}}</p>
+			<p><strong>Phone:</strong> <weblink href="{{g.specificPerson.buphone | phoneLink}}">{{g.specificPerson.buphone}}</weblink></p>
+			<p><strong>Email:</strong> <weblink href="mailto:{{g.specificPerson.buemail}}">{{g.specificPerson.buemail}}</weblink></p>
+			<p><strong>Department:</strong> {{g.specificPerson.deptname}}</p>
+		</div>
+		<!--
+		Tab bar at bottom of screen
+		-->
+		<nav class="navbar topcoat-tab-bar full">
+			<nav-button icon="fa-calendar" btn-click="switchPage('Events')" g="g" name="Events">Events</nav-button>
+			<nav-button icon="fa-clock-o" btn-click="switchPage('Hours')" g="g" name="Hours">Hours</nav-button>
+			<nav-button icon="fa-quote-right" btn-click="switchPage('News')" g="g" name="News">News</nav-button>
+			<nav-button icon="fa-user" btn-click="switchPage('People')" g="g" name="People">People</nav-button>
+			<nav-button icon="fa-gear" btn-click="browseTo('http://smgtools.bu.edu')" g="g" name="SMGTools">SMGTools</nav-button>
+		</nav>
+		<!--
+		JS: since these local copies will be stored on the phone itself,
+		getting them from a CDN would actually slow the app down.
+		-->
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script>
+			// On a normal browser window, don't include the file
+			if (!navigator.userAgent.match(/chrome|firefox/i) ||
+				navigator.userAgent.match(/android/i)) {
+				document.write("<script src='cordova.js'><\/script>");
+				// document.write("<script src='cordova_plugins.js'><\/script>");
+				// document.write("<script src='statusbar.js'><\/script>");
+				// document.write("<script src='Calendar.js'><\/script>");
+				// document.write("<script src='plugins/nl.x-services.plugins.calendar/www/Calendar.js'><\/script>");
+			}
+			// See: http://www.bar54.de/2013/12/phonegap-app-fix-ios-7-status-bar/
+			if (navigator.userAgent.match(/(iPad.*|iPhone.*|iPod.*);.*CPU.*OS 7_\d/i)) {
+				
+				$("body").addClass("ios7");
+			}
+		</script>
+		<script src="Calendar.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-touch.min.js"></script>
+		<script src="js/moment.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>
